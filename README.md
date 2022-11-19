@@ -1,4 +1,4 @@
-The basic commands for any terraform IaS to work with are
+The basic commands for any terraform IaC to work with are
 
 -   terraform init
 -   terraform plan
