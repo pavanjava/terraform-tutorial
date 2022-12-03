@@ -1,0 +1,1 @@
+- please execute one file at a time else when we run the terraform init, terrafomr plan & terrraform apply both the file bofore-* and after-* are taken into consideration and you may run into unwanted problems. hence recomending to comment one file and run the commands above.

@@ -1,0 +1,4 @@
+- terraform taint command is used to mark any resource created by terraform as tainted resource, so that next time we issue terraform-plan it will show that previously created resource will be deleted and a fresh resource is created back.
+- use case: assume you created a resource with terraform and some other team members manually changed the resource to the maximum extent. now when we issue the command terraform-plan it will show huge lot of differences and which will make us to identify what was the problem (if any).
+- command: terraform taint <resource-name>.<local-name>
+eg: terraform tain aws_instance.app_ec2
