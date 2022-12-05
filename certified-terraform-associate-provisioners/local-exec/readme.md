@@ -1,0 +1,1 @@
+- local-exec is used to execute some script in local machine where the terraform is invoked
