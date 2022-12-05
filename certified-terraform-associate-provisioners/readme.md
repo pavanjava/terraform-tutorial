@@ -1,6 +1,6 @@
 - in terraform there are 2 types of provisioners
     - create time provisioner
-    - destroy time provisioner
+    - destroy time provisioner</br>
     ` provisioner "local-exec" {
     when    = destroy
     command = "echo 'Destroy-time provisioner'"
