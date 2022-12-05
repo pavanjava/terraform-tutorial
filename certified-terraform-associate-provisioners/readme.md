@@ -1,3 +1,4 @@
 - in terraform there are 2 types of provisioners
     - create time provisioner
     - destroy time provisioner
+- if a provisioner failes because of any issue, then the resource is marked as tainted, so when you fire terraform apply the existing resporce is destroyed and a new one is created.
