@@ -6,3 +6,6 @@
 
 *.tfvars
 **/*.tfvars
+
+**/*.lock.hcl
+**/*.pem
