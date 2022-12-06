@@ -40,3 +40,7 @@ resource "aws_security_group" "elb_sg" {
 locals {
   app_port = "8443"
 }
+
+output "ec2_sg_id" {
+  value = aws_security_group.ec2_sg.arn
+}
