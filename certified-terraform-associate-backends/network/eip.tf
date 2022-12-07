@@ -8,9 +8,13 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-2"
+  region = var.region
 }
 
 resource "aws_eip" "eip_lb" {
   vpc = true
+}
+
+output "public_ip_addr" {
+  value = aws_eip.eip_lb.public_ip
 }
