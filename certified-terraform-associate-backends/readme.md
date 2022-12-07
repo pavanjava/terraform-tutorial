@@ -1,3 +1,4 @@
 - before executing this code, please create an s3 bucket and then configure it with the backend code
 - once done when we issue command "terraform apply" the terraform.tfstate will no more saved locally but will be available in s3
 - same thing can be setup with azure with storage accounts and azure blob storage as well.
+- this module has got the integration of backend feature like S3 and DynamoDB
