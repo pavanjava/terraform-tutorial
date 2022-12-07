@@ -1,0 +1,3 @@
+- In this we will be seeing how to integrate the backend store like s3 to connect with dynamodb.
+- In regular backend scenarios where the *.tfstate file is stored in s3 bucket, we are not gaurentee the lock functionality
+- As a reason we will use dynamodb to record the state info so that any one else in the team is trying for a parallel write on the *.tfstate file will be warned of the lock that is acquired at that moment.
