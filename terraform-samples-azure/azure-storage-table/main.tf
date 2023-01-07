@@ -19,18 +19,15 @@ resource "azurerm_resource_group" "storage-rg" {
   location = var.resource-group-location
 }
 
-resource "azurerm_storage_account" "storact-acct" {
-  name                     = var.storact-acct-name
+resource "azurerm_storage_account" "storage-acct" {
+  name                     = var.storage-acct-name
   resource_group_name      = azurerm_resource_group.storage-rg.name
   location                 = azurerm_resource_group.storage-rg.location
-  account_tier             = var.storact-account-tier
+  account_tier             = var.storage-account-tier
   account_replication_type = var.storage-account-replication-type
-  
 }
 
-resource "azurerm_storage_container" "storage-ctnr" {
-  name                  = var.storage-container-name
-  storage_account_name  = azurerm_storage_account.storact-acct.name
-  container_access_type = var.storage-container-access-type
-
+resource "azurerm_storage_table" "storage-table" {
+  name                 = var.storage-table-name
+  storage_account_name = azurerm_storage_account.storage-acct.name
 }
