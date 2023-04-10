@@ -36,14 +36,14 @@ resource "aws_security_group" "netcat_sg" {
 resource "aws_instance" "ec2_netcat" {
   ami             = "ami-0beaa649c482330f7"
   instance_type   = "t2.micro"
-  key_name        = "terraform-key"
+  key_name        = "tf-tutorial"
   vpc_security_group_ids = [ "${aws_security_group.netcat_sg.id}"]
 
   connection {
     type        = "ssh"
     host        = self.public_ip
     user        = "ec2-user"
-    private_key = file("./terraform-key.pem")
+    private_key = file("./tf-tutorial.pem")
   }
 
   provisioner "remote-exec" {
