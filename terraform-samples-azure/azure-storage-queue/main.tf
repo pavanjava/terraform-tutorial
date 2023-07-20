@@ -28,8 +28,7 @@ resource "azurerm_storage_account" "storact-acct" {
   
 }
 
-resource "azurerm_storage_container" "storage-ctnr" {
-  name                  = var.storage-container-name
-  storage_account_name  = azurerm_storage_account.storact-acct.name
-  container_access_type = var.storage-container-access-type
+resource "azurerm_storage_queue" "storage-event-queue" {
+  name = var.storage-event-queue-name
+  storage_account_name = azurerm_storage_account.storact-acct.name
 }
