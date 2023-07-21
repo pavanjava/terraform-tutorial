@@ -25,6 +25,7 @@ resource "azurerm_storage_account" "storact-acct" {
   location                 = azurerm_resource_group.storage-rg.location
   account_tier             = var.storact-account-tier
   account_replication_type = var.storage-account-replication-type
+  is_hns_enabled = "true"
 }
 
 resource "azurerm_storage_container" "storage-ctnr" {
