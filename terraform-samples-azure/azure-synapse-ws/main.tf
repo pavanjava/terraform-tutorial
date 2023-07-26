@@ -38,7 +38,9 @@ resource "azurerm_synapse_workspace" "synapse_ws" {
   resource_group_name                  = azurerm_resource_group.synapse_rg.name
   location                             = azurerm_resource_group.synapse_rg.location
   storage_data_lake_gen2_filesystem_id = azurerm_storage_data_lake_gen2_filesystem.synapse_dls_gen2.id
-
+  sql_administrator_login              = var.synapse_sql_username
+  sql_administrator_login_password     = var.synapse_sql_password
+  
   tags = {
     Env = "development"
   }
