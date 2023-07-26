@@ -18,7 +18,23 @@ variable "storage-account-replication-type" {
   type = string
 }
 
-variable "storage-container-name" {
+variable "worker-container-name" {
+  type = string
+}
+
+variable "aisle-container-name" {
+  type = string
+}
+
+variable "bay-container-name" {
+  type = string
+}
+
+variable "level-container-name" {
+  type = string
+}
+
+variable "bin-container-name" {
   type = string
 }
 
