@@ -2,7 +2,7 @@ terraform {
   required_providers {
     azurerm = {
       source = "hashicorp/azurerm"
-      version = "3.43.0"
+      version = "3.65.0"
     }
   }
 }
@@ -19,7 +19,7 @@ resource "azurerm_resource_group" "synapse_rg" {
 }
 
 resource "azurerm_storage_account" "synapse_storage_acct" {
-  name                     = "synapsestorageacct001"
+  name                     = var.synapse_storage_acct_name
   resource_group_name      = azurerm_resource_group.synapse_rg.name
   location                 = azurerm_resource_group.synapse_rg.location
   account_tier             = "Standard"
@@ -29,12 +29,12 @@ resource "azurerm_storage_account" "synapse_storage_acct" {
 }
 
 resource "azurerm_storage_data_lake_gen2_filesystem" "synapse_dls_gen2" {
-  name               = "synapsedlsgen2"
+  name               = var.synapse_dls_gen2_filesystem_name
   storage_account_id = azurerm_storage_account.synapse_storage_acct.id
 }
 
 resource "azurerm_synapse_workspace" "synapse_ws" {
-  name                                 = "synapsews-001"
+  name                                 = var.synapse_ws_name
   resource_group_name                  = azurerm_resource_group.synapse_rg.name
   location                             = azurerm_resource_group.synapse_rg.location
   storage_data_lake_gen2_filesystem_id = azurerm_storage_data_lake_gen2_filesystem.synapse_dls_gen2.id
